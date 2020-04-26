@@ -1,0 +1,11 @@
+<h1>Search Products</h1>
+
+{{#if error}} <span style="color:red">{{error}}</span> {{/if}}
+{{#if success}} <span style="color:green">{{success}}</span> {{/if}}
+
+<form class="form-inline" method="POST" action="/api/products/search">
+    <div class="form-group">
+        <input type="text" name="name" class="form-control" placeholder="Search Product">
+    </div>
+    <input type="submit" class="btn btn-primary" value="Search">
+</form>

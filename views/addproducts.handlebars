@@ -1,0 +1,40 @@
+<h1>Add Products</h1>
+
+{{#if error}} <span style="color: red;">{{error}}</span> {{/if}}
+{{#if success}} <span style="color: green;">{{success}}</span> {{/if}}
+
+<form method="POST" action="/api/products/insert">
+    {{!-- <div class="form-group">
+        <label for="">User Id</label>
+        <input type="text" name="id" class="form-control" placeholder="id">
+    </div> --}}
+
+    <div class="form-group">
+        <label for="">Product Name</label>
+        <input type="text" name="name" class="form-control" placeholder="Product Name">
+    </div>
+
+    <div class="form-group">
+        <label for="">Category</label>
+        <input type="text" name="category" class="form-control" placeholder="Category">
+    </div>
+
+    <div class="form-group">
+        <label for="">Price</label>
+        <input type="number" name="price" class="form-control" placeholder="Price">
+    </div>
+
+    <div class="form-group">
+        <label for="">Quantity</label>
+        <input type="number" name="quantity" class="form-control" placeholder="Quantity">
+    </div>
+
+    <div class="form-group">
+        <label for="">Description</label>
+    </div>
+    <div>
+        <textarea name="description" cols="100" rows="2"></textarea>
+    </div>
+
+    <input type="submit" class="btn btn-primary" value="Add">
+</form>

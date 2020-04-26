@@ -1,0 +1,55 @@
+<style>
+    .login-form {
+        width: 340px;
+        margin: 50px auto;
+    }
+
+    .login-form form {
+        margin-bottom: 15px;
+        background: #f7f7f7;
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+        padding: 30px;
+    }
+
+    .login-form h1 {
+        margin: 0 0 15px;
+    }
+
+    .form-control,
+    .btn {
+        min-height: 38px;
+        border-radius: 5px;
+        ;
+    }
+
+    .btn {
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+    #signup {
+        margin-top: 5px;
+        float: right;
+    }
+</style>
+<div class="login-form">
+    <form action="/api/users/register" method="POST">
+        <h1 class="text-center"> Register </h1>
+        {{#if error}} <span style="color:red">{{error}}</span> {{/if}}
+        {{#if success}} <span style="color: green;">{{success}}</span> {{/if}}
+        <div class="form-group">
+            <input type="text" class="form-control" name="name" placeholder="Name" required="required">
+        </div>
+        <div class="form-group">
+            <input type="email" class="form-control" name="email" placeholder="Email" required="required">
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" name="password" placeholder="Password" minlength="6"
+                required="required">
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block">Signup</button>
+        </div>
+
+    </form>
+</div>

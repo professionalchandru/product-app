@@ -1,0 +1,41 @@
+<h1>View Product</h1>
+{{#if error}} <span style="color: red;">
+    {{error}}
+</span> {{/if}}
+
+{{#if success}} <span style="color: green;">
+    {{success}}
+</span> {{/if}}
+<div class="card" style="width: 18rem;">
+    <div class="card-header">
+        <h3><strong>{{pname}}</strong> </h3>
+        <p><i class="fa fa-thumbs-up" aria-hidden="true"></i> {{likes}}</p>
+
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item"><strong>Category: </strong>{{pcategory}}</li>
+        <li class="list-group-item"><strong>Price: </strong>{{pprice}}</li>
+        <li class="list-group-item"><strong>Quantity: </strong>{{pquantity}}</li>
+        <li class="list-group-item"><strong>Description: </strong> {{pdescription}}</li>
+        {{!-- <li class="list-group-item"><strong>Likes: </strong>{{likes}}</li> --}}
+        <li class="list-group-item"><strong>Likedby: </strong>{{plikedby}}</li>
+    </ul>
+</div>
+<div>
+    <form action="/api/products/like/{{pname}}?_method=PATCH" method="POST">
+        <button type="submit" style="float: left; margin: 2px;" class="btn btn-primary">
+            <i class="fa fa-thumbs-up" aria-hidden="true">Like</i>
+        </button>
+    </form>
+</div>
+<div>
+    <a href="/api/products/search" class="btn btn-success" style="float: left;  margin: 2px;">Back</a>
+    <form action="/api/products/edit/{{pname}}?_method=GET" method="POST">
+        <button type="submit" style="float: left; margin: 2px;" class="btn btn-warning">
+            <i class="fa fa-thumbs-up" aria-hidden="true">Edit</i>
+        </button>
+    </form>
+    <form method="POST" action="/api/products/{{pname}}?_method=DELETE">
+        <input type="submit" style=" margin: 2px;" class="btn btn-danger" value="Delete">
+    </form>
+</div>
