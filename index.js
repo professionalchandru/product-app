@@ -4,6 +4,7 @@ const methodOverride = require('method-override');
 const exphbs = require('express-handlebars');
 const bodyParser = require('body-parser');
 const dotenv = require('dotenv').config();
+const port = process.env.PORT || 3000
 const redis = require('redis');
 const path = require('path');
 const cookieParser = require('cookie-parser')
@@ -50,4 +51,4 @@ app.get('/', (req, res, next) => {
 });
 
 //Server listening for connection
-app.listen(3000, () => console.log('Server is up and listening in port 3000'));
+app.listen(port, () => console.log('Server is up and listening in port ' + port));
